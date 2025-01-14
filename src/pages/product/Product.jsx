@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router";
+import Slider from "../../slider/Slider.jsx";
 
 const Product = () => {
   const {id} = useParams()
@@ -21,11 +22,18 @@ const Product = () => {
   }
 
   return (
-      <div>
-        {product.images.map( imgUrl => {
-          return <img width={180} src={imgUrl} key={imgUrl} alt=""/>
-        })}
-      </div>
+      <>
+        <div>
+          {product?.images?.map(imgUrl => {
+            return <img width={180} src={imgUrl} key={imgUrl} alt=""/>
+          })}
+
+        </div>
+        <div className={"slider"}>
+          <Slider images={product.images} />
+        </div>
+      </>
+
   );
 };
 

@@ -10,7 +10,6 @@ class Header extends Component {
   }
 
   //  setState
-
   componentDidMount() {
     console.log("componentDidMount Header")
     fetch("https://api.escuelajs.co/api/v1/products")
